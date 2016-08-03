@@ -1,0 +1,7 @@
+type: module
+name: 'News Module'
+description: 'News Module Workshop'
+package: Workshop Modules
+core: 8.x
+dependencies:
+  - node

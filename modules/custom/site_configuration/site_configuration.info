@@ -1,0 +1,4 @@
+name = Site Configuration
+description = Configuration module, used to automated changes to this site
+core = 7.x
+package = Configuration

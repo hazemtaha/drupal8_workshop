@@ -1,0 +1,33 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
+
+function news_install() {
+	add_vocabulary();
+	add_terms();
+}
+
+function add_vocabulary() {
+	$vocabulary = Vocabulary::load('tags');
+	if (!isset($vocabulary)) {
+		$description = t('Enter a comma seperated list of words to describe your article');
+		$vocabulary = Vocabulary::create(array(
+			'name' => 'Tags',
+			'description' => $description,
+			'machine_name' => 'custom_tags',
+			'vid' => 'custom_tags',
+		));
+		$vocabulary->save();
+	}
+}
+function add_terms() {
+	$terms = array('Technology', 'Sports', 'Education', 'Politics', 'Medical', 'Crime');
+	foreach ($terms as $termName) {
+		$term = Term::create(array(
+			'name' => $termName,
+			'vid' => 'tags',
+		));
+		$term->save();
+	}
+}

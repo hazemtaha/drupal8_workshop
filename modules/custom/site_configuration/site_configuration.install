@@ -1,0 +1,7 @@
+<?php 
+
+
+function site_configuration_update_7002() {
+	variable_set('site_name', "Link Workshop");
+	variable_set('site_slogan', "Excelence is a way of living");
+}
