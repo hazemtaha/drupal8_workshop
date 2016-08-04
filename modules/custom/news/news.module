@@ -1,0 +1,15 @@
+<?php 
+
+
+function news_form_alter(&$form, &$form_state, $form_id) {
+	if ($form_id == 'node_news_form') {
+		$form['#validate'][] = 'news_form_validate';
+		$form['field_tags']['#access'] = FALSE;
+	}
+}
+
+function news_form_validate($form, &$form_state) {
+	if (strlen($form_state->getValue('title')[0]['value']) < 10) {
+		$form_state->setErrorByName('title', t('Title must be more than 10 characters in length'));
+	}
+}
