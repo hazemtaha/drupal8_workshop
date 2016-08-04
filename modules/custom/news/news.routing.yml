@@ -1,0 +1,22 @@
+news.normal_add:
+  path: 'news/normal_add'
+  defaults:
+    _controller: '\Drupal\news\Controller\NewsController::normal_add'
+    _title: 'News Submission'
+  requirements:
+    _permission: 'access content'
+
+news.normal_edit:
+  path: 'news/normal_edit/{node}'
+  defaults:
+    _controller: '\Drupal\news\Controller\NewsController::normal_edit'
+    _title: 'News Editing'
+  requirements:
+    _permission: 'access content'
+
+news.normal_delete:
+  path: 'news/normal_delete/{node}'
+  defaults:
+    _controller: '\Drupal\news\Controller\NewsController::normal_delete'
+  requirements:
+    _permission: 'access content'
